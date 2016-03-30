@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="myapp">
+	<head>
+		<title>Crud App</title>
+		<meta charset="utf-8"></meta>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script src="app.js"></script>
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</head>
+	
+	<body ng-controller="mainController">
+		
+		<div class="container">
+			
+			<div>
+				<h1> {{ message }} </h1>
+			</div>
+				<form>
+					<div class="form-group">
+						<div>						
+							First Name : <input type="text" class="form-control" ng-model="firstname.text" autofocus="autofocus">
+							Last Name : <input type="text" class="form-control" ng-model="lastname.text">
+						</div>
+						<div class="btn-group btn-group-lg" role="group" aria-label="...">
+							<button type="button" class="btn btn-info" ng-click="insertname()">Insert</button>
+							<button type="button" class="btn btn-warning" ng-click="updatename()">Update</button>
+							<button type="button" class="btn btn-danger" ng-click="deletename()">Delete</button>
+						</div>
+						
+						<div ng-repeat="person in persons">
+							<label>
+								<input type="radio" ng-click="selectid(person)"> {{person.firstname}} {{person.lastname}}
+							</label>
+						</div>
+						
+						
+					</div>
+				</form>	
+		</div>
+	</body>
+</html>
